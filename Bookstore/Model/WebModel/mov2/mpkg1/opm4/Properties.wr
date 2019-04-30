@@ -1,0 +1,27 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#mpkg1#opm4" name="Update shopping cart (figur 12)" gr:x="0" gr:y="0">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#mpkg1#opm4#icu4" customDescriptor="false" gr:x="65" gr:y="250">
+      <InputCollectorParameter id="mov2#mpkg1#opm4#icu4#icp3" name="Shopping cart object"/>
+      <Link id="mov2#mpkg1#opm4#icu4#ln4" name="Flow3" to="mov2#mpkg1#opm4#miu17" type="transport" automaticCoupling="true" validate="true"/>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit id="mov2#mpkg1#opm4#miu17" name="Update/Empty?" gr:x="440" gr:y="280" action="false">
+      <OKLink id="mov2#mpkg1#opm4#miu17#oln9" name="OKFlow4" to="mov2#mpkg1#opm4#miu18" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg1#opm4#miu17#kln3" name="KOFlow1" to="mov2#mpkg1#opm4#miu19" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov2#mpkg1#opm4#miu18" name="Update quantity" gr:x="760" gr:y="165" action="true">
+      <OKLink id="mov2#mpkg1#opm4#miu18#oln10" name="OKFlow5" to="mov2#mpkg1#opm4#mfu4" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit id="mov2#mpkg1#opm4#miu19" name="Empty shopping cart" gr:x="625" gr:y="420" action="true">
+      <OKLink id="mov2#mpkg1#opm4#miu19#oln11" name="OKFlow7" to="mov2#mpkg1#opm4#miu20" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModifyUnit id="mov2#mpkg1#opm4#mfu4" name="Update3" gr:x="1100" gr:y="235">
+      <Selector id="mov2#mpkg1#opm4#mfu4#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#mpkg1#opm4#mfu4#su5#kcond5" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+    </ModifyUnit>
+    <ModuleInstanceUnit id="mov2#mpkg1#opm4#miu20" name="Show confirmation message" gr:x="965" gr:y="435" action="true">
+      <OKLink id="mov2#mpkg1#opm4#miu20#oln12" name="OKFlow8" to="mov2#mpkg1#opm4#mfu4" automaticCoupling="true"/>
+      <KOLink id="mov2#mpkg1#opm4#miu20#kln4" name="KOFlow2" to="mov2#mpkg1#opm4#miu17" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</OperationModule>
