@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DBMetaData driverMajorVersion="9" driverMinorVersion="3" driverVersion="PostgreSQL 9.3 JDBC3g (build 1103)" productVersion="9.4.21" identifierQuoteString="&quot;" transactionLevel="Read Committed" driverName="PostgreSQL Native Driver" productName="PostgreSQL">
+  <Schema name="information_schema"/>
+  <Schema name="pg_catalog"/>
+  <Schema name="prosjekt1"/>
+  <Schema name="public"/>
+  <Sequence schema="prosjekt1" name="arrangement_arrangementid_seq"/>
+  <Sequence schema="prosjekt1" name="arrangementdeltagelse_deltagelseid_seq"/>
+  <Sequence schema="prosjekt1" name="bedrift_bedriftid_seq"/>
+  <Sequence schema="prosjekt1" name="kategori_kategoriid_seq"/>
+  <Sequence schema="prosjekt1" name="prosjekt_prosjektid_seq"/>
+  <Sequence schema="prosjekt1" name="stemme_stemmeid_seq"/>
+  <Sequence schema="prosjekt1" name="stemmemetode_metodeid_seq"/>
+  <Sequence schema="prosjekt1" name="studie_studieid_seq"/>
+  <Sequence schema="prosjekt1" name="usergroup_groupid_seq"/>
+  <Sequence schema="prosjekt1" name="users_userid_seq"/>
+  <Sequence schema="public" name="project_projectid_seq"/>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="arrangement" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="arrangementid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="arrangementnavn" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="arrangementbeskrivelse" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="arrangementstemmemetode" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="timestamp" size="29" decimalDigits="6" name="arragementetutgaar" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="arrangementdeltagelse" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="deltagelseid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="arrangement" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="prosjekt" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="bedrift" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="bedriftid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="100" decimalDigits="0" name="bedriftnavn" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="1000" decimalDigits="0" name="bedriftbeskrivelse" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="kategori" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="kategoriid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="kategorinavn" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="prosjekt" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="prosjektid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="100" decimalDigits="0" name="prosjektnavn" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="1000" decimalDigits="0" name="prosjektbeskrivelse" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="studie" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="sammarbeidsbedrift" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="shortenedurl" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="qrimagepath" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="pictureurl" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="backgroundurl" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="prosjektuser" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="stemme" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="stemmeid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="arrangementdeltagelseid" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="epost" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="stemmeverdi" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="93" indexed="unknown" autoIncrement="false" type="timestamp" size="29" decimalDigits="6" name="stemmetidspunkt" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="stemmemetode" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="metodeid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="25" decimalDigits="0" name="metodenavn" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="metodeparameter" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="studie" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="studieid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="studienavn" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="studiebeskrivelse" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="studiekategori" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="usergroup" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="groupid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="groupname" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="grouplevel" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="prosjekt1" ignoreIndexes="false" name="users" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="userid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="username" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="255" decimalDigits="0" name="password" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="int4" size="10" decimalDigits="0" name="usergroup" primaryKey="false" notNull="true"/>
+    <Column sqlTypeId="-7" indexed="unknown" autoIncrement="false" type="bool" size="1" decimalDigits="0" name="expired" primaryKey="false" notNull="false"/>
+    <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="varchar" size="50" decimalDigits="0" name="ipadress" primaryKey="false" notNull="false"/>
+  </Table>
+  <Table schema="public" ignoreIndexes="false" name="project" type="TABLE" refreshed="true">
+    <Column sqlTypeId="4" indexed="unknown" autoIncrement="true" type="serial" size="10" decimalDigits="0" name="projectid" primaryKey="true" notNull="true"/>
+    <Column sqlTypeId="1" indexed="unknown" autoIncrement="false" type="bpchar" size="50" decimalDigits="0" name="name" primaryKey="false" notNull="false"/>
+  </Table>
+</DBMetaData>
